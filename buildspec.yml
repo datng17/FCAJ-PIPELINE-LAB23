@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+  pre_build:
+    commands:
+      - echo "Running pre-build commands..."
+      - curl -s https://example.com/somefile.txt -o /dev/null  # Tải một file không quan trọng
+  build:
+    commands:
+      - echo "Building the static site..."
+      - echo "No actual build needed for a static site."
+  post_build:
+    commands:
+      - echo "Running post-build steps..."
+      - echo "Post-build steps complete."
+
+artifacts:
+  files:
+    - '**/*'

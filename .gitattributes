@@ -1,0 +1,2 @@
+# Force LF for shell scripts to ensure they work on Linux/EC2
+scripts/* text eol=lf
