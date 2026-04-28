@@ -8,6 +8,10 @@ files:
     destination: /var/www/html/
     overwrite: true
 hooks:
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
   BeforeInstall:
     - location: scripts/install_dependencies
       timeout: 300
@@ -16,3 +20,9 @@ hooks:
     - location: scripts/start_server
       timeout: 300
       runas: root
+
+permissions:
+  - object: /var/www/html/
+    pattern: "**"
+    owner: www-data
+    group: www-data

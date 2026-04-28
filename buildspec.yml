@@ -7,7 +7,7 @@ phases:
   pre_build:
     commands:
       - echo "Running pre-build commands..."
-      - curl -s https://example.com/somefile.txt -o /dev/null  # Tải một file không quan trọng
+      - curl -s https://example.com/somefile.txt -o /dev/null  
   build:
     commands:
       - echo "Building the static site..."
