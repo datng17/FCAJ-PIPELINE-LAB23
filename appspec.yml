@@ -24,5 +24,5 @@ hooks:
 permissions:
   - object: /var/www/html/
     pattern: "**"
-    owner: www-data
-    group: www-data
+    owner: apache
+    group: apache
