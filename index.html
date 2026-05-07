@@ -8,28 +8,54 @@
         body {
             color: #000080;
             background-color: #FFFFFF;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
         }
 
         h1 {
             font-size: 500%;
-            font-weight: normal;
-            margin-bottom: 0;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #000080, #0073bb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h2 {
             font-size: 200%;
             font-weight: normal;
-            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 250px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
-    <div align="center">
+    <div class="container">
         <h1>Congratulations!!!</h1>
-        <img src="logo_fcaj.png" style="max-width: 20%;">
+        <img src="logo_fcaj.png" class="logo" alt="AWS First Cloud AI Journey Logo">
         <h2>Welcome to AWS First Cloud AI Journey!!!</h2>
     </div>
 </body>
