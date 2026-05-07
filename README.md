@@ -6,22 +6,26 @@ This repository contains the configuration and scripts for automating software d
 The goal of this project is to establish a robust CI/CD pipeline that automatically deploys application updates from a source repository (like GitHub or AWS CodeCommit) to a fleet of Amazon EC2 instances.
 
 ## Infrastructure Setup
-To prepare your **Ubuntu** instance for CodeDeploy, you can use the following script as **User Data** during instance launch:
+To prepare your **Amazon Linux** instance for CodeDeploy, you can use the following script as **User Data** during instance launch:
 
 ```bash
 #!/bin/bash
 # Update system and install dependencies
-sudo apt update -y
-sudo apt install ruby-full wget python3-pip -y
+sudo yum update -y
+sudo yum install ruby wget -y
 
 # Download and install CodeDeploy agent
-cd /home/ubuntu
-wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
-sudo chmod +x ./install
+# Replace 'region-identifier' with your actual region (e.g., us-east-1)
+cd /home/ec2-user
+wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+chmod +x ./install
 sudo ./install auto
 
-# Install AWS CLI
-sudo pip3 install awscli
+# Ensure CodeDeploy agent is running
+sudo service codedeploy-agent status
+
+# Start the codedeploy-agent
+systemctl start codedeploy-agent
 ```
 
 ## Repository Structure
