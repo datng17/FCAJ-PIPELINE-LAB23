@@ -1,6 +1,7 @@
 #!/bin/bash
 # Update and install Apache (httpd)
 sudo yum install -y httpd
+sudo systemctl start httpd
 sudo systemctl enable httpd
 
 # Clean up default welcome page if it exists
