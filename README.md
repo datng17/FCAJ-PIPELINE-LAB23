@@ -1,11 +1,11 @@
-# AWS CI/CD Pipeline: Code Deployment to EC2
+# AWS CI/CD Pipeline: Code deployment to EC2
 
 This repository contains the configuration and scripts for automating software deployments to AWS EC2 instances using **AWS CodeDeploy**.
 
-## Project Overview
+## Project overview
 The goal of this project is to establish a robust CI/CD pipeline that automatically deploys application updates from a source repository (like GitHub or AWS CodeCommit) to a fleet of Amazon EC2 instances.
 
-## Infrastructure Setup
+## Infrastructure setup
 To prepare your **Amazon Linux** instance for CodeDeploy, you can use the following script as **User Data** during instance launch:
 
 ```bash
@@ -28,14 +28,14 @@ sudo service codedeploy-agent status
 systemctl start codedeploy-agent
 ```
 
-## Repository Structure
+## Repository structure
 - `appspec.yml`: Main configuration file for AWS CodeDeploy.
 - `buildspec.yml`: Instructions for AWS CodeBuild (if applicable).
 - `scripts/`: Deployment lifecycle hooks (start/stop/install).
 - `index.html`: Sample application landing page.
 - `.gitattributes`: Ensures Linux-compatible line endings for scripts.
 
-## Deployment Lifecycle
+## Deployment pipeline
 AWS CodeDeploy uses the scripts in the `scripts/` directory during specific phases of the deployment:
 1. **BeforeInstall**: `scripts/install_dependencies`
 2. **AfterInstall**: Configuration and cleanup.
